@@ -20,9 +20,14 @@ public class Main {
         double width = Double.parseDouble(reader.readLine());
         double height = Double.parseDouble(reader.readLine());
 
-        Box box = new Box(length, width, height);
-        System.out.printf("Surface Area - %.2f" + System.lineSeparator(), box.surfaceArea());
-        System.out.printf("Lateral Surface Area - %.2f" + System.lineSeparator(), box.lateralArea());
-        System.out.printf("Volume - %.2f", box.volume());
+        try{
+            Box box = new Box(length, width, height);
+            System.out.printf("Surface Area - %.2f" + System.lineSeparator(), box.surfaceArea());
+            System.out.printf("Lateral Surface Area - %.2f" + System.lineSeparator(), box.lateralArea());
+            System.out.printf("Volume - %.2f", box.volume());
+        }
+        catch(IllegalArgumentException ex){
+            System.out.println(ex.getMessage());
+        }
     }
 }
